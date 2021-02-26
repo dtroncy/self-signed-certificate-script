@@ -29,4 +29,4 @@ openssl genrsa -out  ${fqdn}.key ${key_size}
 openssl req -new -sha256 -out ${fqdn}.csr -key ${fqdn}.key -config conf.cfg
 
 # Generate the certificate
-openssl x509 -req -sha256 -days ${key_duration} -in ${fqdn}.csr -signkey ${fqdn}.key -out ${fqdn}.crt -extensions server_req_extensions -extfile conf.cfg
+openssl x509 -req -sha256 -days ${key_duration} -in ${fqdn}.csr -signkey ${fqdn}.key -out ${fqdn}.crt -extensions server_req_extensions -extfile config.cfg
