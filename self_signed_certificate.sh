@@ -26,7 +26,7 @@ IP.1   = 127.0.0.1
 openssl genrsa -out  ${fqdn}.key ${key_size}
 
 # Generate a Certificate Signing Request
-openssl req -new -sha256 -out ${fqdn}.csr -key ${fqdn}.key -config conf.cfg
+openssl req -new -sha256 -out ${fqdn}.csr -key ${fqdn}.key -config config.cfg
 
 # Generate the certificate
 openssl x509 -req -sha256 -days ${key_duration} -in ${fqdn}.csr -signkey ${fqdn}.key -out ${fqdn}.crt -extensions server_req_extensions -extfile config.cfg
